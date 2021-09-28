@@ -5,10 +5,22 @@
  * Description: This is for a coding test with Impsyde to test my skill in PHP
  * Requires at least: 5.2
  * Requires PHP:      7.2
- * Version: 0.1
+ * Version: 0.4
  * Author: Jaleen Bowens-Kelly
  * License: MIT
  */
+
+/*Loads Data.js*/
+function loadDatajs(){
+    wp_enqueue_script( 
+        "",
+        plugin_dir_url(__FILE__) . "Data.js",
+        array(),
+        true
+    );
+}
+
+add_action();
 
  /*Impsyde check for class*/
 if ( !class_exists( "ImpsydeCodeTest" ) ){
