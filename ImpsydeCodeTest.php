@@ -13,7 +13,7 @@
 /*Loads Data.js*/
 function loadDatajs(){
     wp_enqueue_script( 
-        "",
+        "Data",
         plugin_dir_url(__FILE__) . "Data.js",
         array('wp-blocks', 'wp-i18n', 'wp-editor'),
         true
@@ -50,7 +50,6 @@ if ( !class_exists( "ImpsydeCodeTest" ) ){
         /*Function for plugin activation*/
         function plugin_activate(){
             do_action( 'plugin_activate');
-            echo
             do_action( 'loadAlert.js' );
         }
         function load_plugin(){
@@ -59,7 +58,7 @@ if ( !class_exists( "ImpsydeCodeTest" ) ){
     }
 }
 
-add_action( 'init', 'loadTableblockjs' );
-add_action( 'init', 'loadAlertjs' )
+add_action( 'enqueue_block_editor_assets', 'loadTableblockjs' );
+add_action( 'enqueue_block_editor_assets', 'loadAlertjs' );
 
 ?>
