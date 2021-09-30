@@ -38,6 +38,8 @@ function loadTableblockjs(){
     );
 }
 
+add_action( 'enqueue_block_editor_assets', 'loadTableblockjs' );
+
  /*Impsyde check for class*/
 if ( !class_exists( "ImpsydeCodeTest" ) ){
 /*Class Impysde*/
@@ -50,7 +52,8 @@ if ( !class_exists( "ImpsydeCodeTest" ) ){
         /*Function for plugin activation*/
         function plugin_activate(){
             do_action( 'plugin_activate');
-            do_action( 'loadAlert.js' );
+            do_action( 'loadAlertjs' );
+            do_action( 'loadTableblockjs' );
         }
         function load_plugin(){
 
@@ -58,7 +61,7 @@ if ( !class_exists( "ImpsydeCodeTest" ) ){
     }
 }
 
-add_action( 'enqueue_block_editor_assets', 'loadTableblockjs' );
+
 add_action( 'enqueue_block_editor_assets', 'loadAlertjs' );
 
 ?>
