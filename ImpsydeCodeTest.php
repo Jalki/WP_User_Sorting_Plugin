@@ -15,7 +15,7 @@ function loadDatajs(){
     wp_enqueue_script( 
         "",
         plugin_dir_url(__FILE__) . "Data.js",
-        array(),
+        array('wp-blocks', 'wp-i18n', 'wp-editor'),
         true
     );
 }
@@ -24,9 +24,9 @@ add_action();
 
 function loadAlertjs(){
     wp_enqueue_script( 
-        "",
+        "Alert_User!",
         plugin_dir_url( __FILE__ ). "Alert.js",
-        array(),
+        array('wp-blocks', 'wp-i18n', 'wp-editor'),
         true
     );
 }
@@ -45,7 +45,7 @@ if ( !class_exists( "ImpsydeCodeTest" ) ){
             do_action( 'plugin_activate');
         }
         function load_plugin(){
-            
+
         }
     }
 }
