@@ -19,9 +19,7 @@ class ImpsydeCodeSettings{
         add_options_page('Impsyde Code Settings', 'Table Sorting Settings', 'manage_options', 'User-sort-settings-page', array($this, 'SettingsPG') );
     }
     
-    function SettingsPG() { ?>
-        Hello world FUCKING WORK
-    <?php   
+    function SettingsPG() {   
     }
 }
 
