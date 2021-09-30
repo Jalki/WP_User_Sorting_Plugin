@@ -30,7 +30,7 @@ function loadAlertjs(){
 }
 
 function loadTableblockjs(){
-    wp_enqueue_script( 
+    wp_register_script( 
         "Table Block",
         plugin_dir_url(__FILE__) . "TableBlock.js",
         array('wp-blocks', 'wp-i18n', 'wp-editor'),
@@ -50,6 +50,8 @@ if ( !class_exists( "ImpsydeCodeTest" ) ){
         /*Function for plugin activation*/
         function plugin_activate(){
             do_action( 'plugin_activate');
+            echo
+            do_action( 'loadAlert.js',  )
         }
         function load_plugin(){
 
@@ -57,6 +59,7 @@ if ( !class_exists( "ImpsydeCodeTest" ) ){
     }
 }
 
-register_activation_hook( __FILE__, "plugin_activate" );
+add_action( 'init', 'loadTableblockjs' );
+add_action( 'init', 'loadAlertjs' )
 
 ?>

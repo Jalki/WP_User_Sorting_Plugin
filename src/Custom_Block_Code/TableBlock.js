@@ -1,8 +1,10 @@
 wp.blocks.registerBlockType('Impsyde_Code_Test_Table', {
     title: 'Table of Users',
-    icon: x,
+    icon: 'table',
     category: 'common',
-    attributes: {},
+    attributes: {
+        
+    },
     edit: function(props){
         return wp.element.createElement("table", null);
     },
