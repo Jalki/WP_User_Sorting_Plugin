@@ -10,6 +10,20 @@
  * License: MIT
  */
 
+
+class ImpsydeCodeSettings{
+    function __construct(){
+        add_action('admin_menu', array($this, 'Settings') );
+    }
+    function Settings(){
+        add_options_page('Impsyde Code Settings', 'User Settings', 'manage_options', 'User-sort-settings-page', array($this, 'SettingsPG') );
+    }
+    
+    function SettingsPG() { 
+        
+    }
+}
+
 /*Loads Data.js*/
 function loadDatajs(){
     wp_enqueue_script( 
@@ -38,28 +52,19 @@ function loadTableblockjs(){
     );
 }
 
-add_action('admin_menu', 'PluginSettings' );
-function PluginSettings(){
-    add_options_page('Impsyde Code Settings', 'User Settings', 'manage_options', 'User-sort-settings-page', 'Settings' );
-}
-
-function Settings() { 
-    
-}
-
 add_action( 'enqueue_block_editor_assets', 'loadTableblockjs' );
 
  /*Impsyde check for class*/
 if ( !class_exists( "ImpsydeCodeTest" ) ){
 /*Class Impysde*/
-    class ImpysdeCodeTest
+    class ImpsydeCodeTest
     {
         /*Function for installation*/
         static function install(){
 
         }
         /*Function for plugin activation*/
-        function plugin_activate(){
+        function __construct(){
             do_action( 'plugin_activate');
             do_action( 'loadAlertjs' );
             do_action( 'loadTableblockjs' );
@@ -69,6 +74,7 @@ if ( !class_exists( "ImpsydeCodeTest" ) ){
         }
     }
 }
+$ImpsydeClass = new ImpsydeCodeTest();
 
 
 add_action( 'enqueue_block_editor_assets', 'loadAlertjs' );
