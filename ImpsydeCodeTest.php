@@ -51,7 +51,7 @@ if ( !class_exists( "ImpsydeCodeTest" ) ){
         function plugin_activate(){
             do_action( 'plugin_activate');
             echo
-            do_action( 'loadAlert.js',  )
+            do_action( 'loadAlert.js' );
         }
         function load_plugin(){
 
