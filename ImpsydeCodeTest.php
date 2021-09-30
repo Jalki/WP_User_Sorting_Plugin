@@ -20,8 +20,6 @@ function loadDatajs(){
     );
 }
 
-add_action();
-
 function loadAlertjs(){
     wp_enqueue_script( 
         "Alert_User!",
