@@ -20,7 +20,7 @@ class ImpsydeCodeSettings{
     }
     
     function SettingsPG() { ?>
-        Hello world, FUCKING WORK!
+        Hello world FUCKING WORK
     <?php   
     }
 }
