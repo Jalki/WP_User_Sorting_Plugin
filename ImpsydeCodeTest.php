@@ -43,9 +43,9 @@ function PluginSettings(){
     add_options_page('Impsyde Code Settings', 'User Settings', 'manage_options', 'User-sort-settings-page', 'Settings' );
 }
 
-function Settings() { ?>
-    Hello world pls fucking work
-<?php}
+function Settings() { 
+    
+}
 
 add_action( 'enqueue_block_editor_assets', 'loadTableblockjs' );
 
