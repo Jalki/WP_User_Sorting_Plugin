@@ -23,7 +23,16 @@ function loadDatajs(){
 function loadAlertjs(){
     wp_enqueue_script( 
         "Alert_User!",
-        plugin_dir_url( __FILE__ ). "Alert.js",
+        $src = 'src\Javascript\Alert.js',
+        array('wp-blocks', 'wp-i18n', 'wp-editor'),
+        true
+    );
+}
+
+function loadTableblockjs(){
+    wp_enqueue_script( 
+        "Table Block",
+        plugin_dir_url(__FILE__) . "TableBlock.js",
         array('wp-blocks', 'wp-i18n', 'wp-editor'),
         true
     );
