@@ -22,6 +22,15 @@ function loadDatajs(){
 
 add_action();
 
+function loadAlertjs(){
+    wp_enqueue_script( 
+        "",
+        plugin_dir_url( __FILE__ ). "Alert.js",
+        array(),
+        true
+    );
+}
+
  /*Impsyde check for class*/
 if ( !class_exists( "ImpsydeCodeTest" ) ){
 /*Class Impysde*/
@@ -35,8 +44,12 @@ if ( !class_exists( "ImpsydeCodeTest" ) ){
         function plugin_activate(){
             do_action( 'plugin_activate');
         }
-        register_activation_hook( __FILE__, 'plugin_activate' );
+        function load_plugin(){
+            
+        }
     }
 }
+
+register_activation_hook( __FILE__, "plugin_activate" );
 
 ?>
