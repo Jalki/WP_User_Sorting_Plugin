@@ -16,11 +16,12 @@ class ImpsydeCodeSettings{
         add_action('admin_menu', array($this, 'Settings') );
     }
     function Settings(){
-        add_options_page('Impsyde Code Settings', 'User Settings', 'manage_options', 'User-sort-settings-page', array($this, 'SettingsPG') );
+        add_options_page('Impsyde Code Settings', 'Table Sorting Settings', 'manage_options', 'User-sort-settings-page', array($this, 'SettingsPG') );
     }
     
-    function SettingsPG() { 
-        
+    function SettingsPG() { ?>
+        Hello world, FUCKING WORK!
+    <?php   
     }
 }
 
