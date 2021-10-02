@@ -74,6 +74,7 @@ if ( !class_exists( "ImpsydeCodeTest" ) ){
     }
 }
 $ImpsydeClass = new ImpsydeCodeTest();
+$ImpsydeSettingsClass = new ImpsydeCodeSettings();
 
 
 add_action( 'enqueue_block_editor_assets', 'loadAlertjs' );
