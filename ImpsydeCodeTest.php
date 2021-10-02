@@ -27,35 +27,43 @@ class ImpsydeCodeSettings{
     }
 }
 
-/*Loads Data.js*/
-function loadDatajs(){
-    wp_enqueue_script( 
-        "Data",
-        plugin_dir_url(__FILE__) . "Data.js",
-        array('wp-blocks', 'wp-i18n', 'wp-editor'),
-        true
-    );
+class Dataload{
+    function __construct(){
+    add_action( 'enqueue_block_editor_assets', array($this, 'loadAlertjs') );
+    }
+    function loadAlertjs(){
+        wp_enqueue_script( 
+            "Alert_User!",
+            $src = plugin_dir_url( __FILE__ ) . "Alert.js" ,
+            array('wp-blocks'),
+            true
+        );
+    }
+    /*Loads Data.js*/
+    function loadDatajs(){
+        wp_enqueue_script( 
+            "Data",
+            plugin_dir_url(__FILE__) . "Data.js",
+            array('wp-blocks', 'wp-i18n', 'wp-editor'),
+            true
+        );
+}
+    
 }
 
-function loadAlertjs(){
-    wp_enqueue_script( 
-        "Alert_User!",
-        $src = 'src\Javascript\Alert.js',
-        array('wp-blocks', 'wp-i18n', 'wp-editor'),
-        true
-    );
+class CustomTable{
+    function __construct(){
+        add_action( 'enqueue_block_editor_assets', 'loadTableblockjs' );
+    }
+    function loadTableblockjs(){
+        wp_register_script( 
+            "Table Block",
+            plugin_dir_url(__FILE__) . "TableBlock.js",
+            array('wp-blocks', 'wp-i18n', 'wp-editor'),
+            true
+        );
+    }
 }
-
-function loadTableblockjs(){
-    wp_register_script( 
-        "Table Block",
-        plugin_dir_url(__FILE__) . "TableBlock.js",
-        array('wp-blocks', 'wp-i18n', 'wp-editor'),
-        true
-    );
-}
-
-add_action( 'enqueue_block_editor_assets', 'loadTableblockjs' );
 
  /*Impsyde check for class*/
 if ( !class_exists( "ImpsydeCodeTest" ) ){
@@ -79,8 +87,7 @@ if ( !class_exists( "ImpsydeCodeTest" ) ){
 }
 $ImpsydeClass = new ImpsydeCodeTest();
 $ImpsydeSettingsClass = new ImpsydeCodeSettings();
-
-
-add_action( 'enqueue_block_editor_assets', 'loadAlertjs' );
+$ImpsydeData = new Dataload();
+$ImpsydeCustomBlock = new CustomTable();
 
 ?>
