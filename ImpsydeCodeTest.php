@@ -19,7 +19,11 @@ class ImpsydeCodeSettings{
         add_options_page('Impsyde Code Settings', 'Table Sorting Settings', 'manage_options', 'User-sort-settings-page', array($this, 'SettingsPG') );
     }
     
-    function SettingsPG() {   
+    function SettingsPG() {   ?>
+        <div class="">
+            <h1>Settings</h1>
+        </div>
+    <?php
     }
 }
 
