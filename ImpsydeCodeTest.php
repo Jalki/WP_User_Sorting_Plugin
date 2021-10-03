@@ -35,7 +35,7 @@ class Dataload{
     function loadAlertjs(){
         wp_enqueue_script( 
             "Alert_User!",
-            $src = plugin_dir_url( __FILE__ ) . "Alert.js" ,
+            $src = plugin_dir_url("src\Javascript\Alert.js", __FILE__ ),
             array('wp-blocks'),
             true
         );
@@ -59,7 +59,7 @@ class CustomTable{
     function loadTableblockjs(){
         wp_register_script( 
             "Table Block",
-            plugin_dir_url(__FILE__) . "TableBlock.js",
+            plugin_dir_url("src\Javascript\TableBlock.js", __FILE__),
             array('wp-blocks', 'wp-i18n', 'wp-editor'),
             true
         );
