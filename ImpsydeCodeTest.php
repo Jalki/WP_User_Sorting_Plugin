@@ -31,6 +31,7 @@ class Dataload{
     function __construct(){
     add_action( 'enqueue_block_editor_assets', array($this, 'loadAlertjs') );
     }
+    /*Fires an Javascript alert when loading in block editor on any posts or page!*/
     function loadAlertjs(){
         wp_enqueue_script( 
             "Alert_User!",
@@ -43,7 +44,7 @@ class Dataload{
     function loadDatajs(){
         wp_enqueue_script( 
             "Data",
-            plugin_dir_url(__FILE__) . "Data.js",
+            plugin_dir_url("src\Javascript\Data.js",__FILE__),
             array('wp-blocks', 'wp-i18n', 'wp-editor'),
             true
         );
