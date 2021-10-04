@@ -62,7 +62,7 @@ class CustomTable{
     function loadTableblockjs(){
         wp_register_script( 
             "Table Block",
-            plugin_dir_url("src\Javascript\TableBlock.js", __FILE__),
+            plugin_dir_url(__FILE__ . "src/Javascript/TableBlock.js"),
             array('wp-blocks', 'wp-i18n', 'wp-editor'),
             true
         );
