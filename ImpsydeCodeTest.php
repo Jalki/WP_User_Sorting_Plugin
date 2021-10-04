@@ -20,8 +20,11 @@ class ImpsydeCodeSettings{
     }
     
     function SettingsPG() {   ?>
-        <div class="">
+        <div class="Title_Page">
             <h1>Settings</h1>
+        </div>
+        <div>
+            <h2></h2>
         </div>
     <?php
     }
@@ -35,7 +38,7 @@ class Dataload{
     function loadAlertjs(){
         wp_enqueue_script( 
             "Alert_User!",
-            $src = plugin_dir_url("src\Javascript\Alert.js", __FILE__ ),
+            plugin_dir_url(__FILE__) . "src/Javascript/Alert.js"  ,
             array('wp-blocks'),
             true
         );
@@ -44,7 +47,7 @@ class Dataload{
     function loadDatajs(){
         wp_enqueue_script( 
             "Data",
-            plugin_dir_url("src\Javascript\Data.js",__FILE__),
+            plugin_dir_url( __FILE__ ) . 'src/Javascript/Data.js',
             array('wp-blocks', 'wp-i18n', 'wp-editor'),
             true
         );
