@@ -1,14 +1,14 @@
-wp.blocks.registerBlockType('Impsyde_Code_Test_Table', {
+wp.blocks.registerBlockType('ImpsydePlugin/User-Table', {
     title: 'Table of Users',
-    icon: 'table',
+    icon: 'smiley',
     category: 'common',
     attributes: {
         
     },
-    edit: function(props){
-        return wp.element.createElement("table", null);
+    edit: function(){
+        return wp.element.createElement("table", null, "Table");
     },
-    save: function(props){
-        return null
+    save: function(){
+        return wp.element.createElement("table", null, "This is Table for users");
     }
 })

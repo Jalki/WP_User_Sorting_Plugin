@@ -60,13 +60,13 @@ class Dataload{
 /*This class initialize and creates the custom block type that will contain our table of users*/
 class CustomTable{
     function __construct(){
-        add_action( 'enqueue_block_editor_assets', 'loadTableblockjs' );
+        add_action( 'enqueue_block_editor_assets', array($this, 'loadTableblockjs'));
     }
     function loadTableblockjs(){
         wp_register_script( 
             "Table Block",
             plugin_dir_url(__FILE__ . "src/Javascript/TableBlock.js"),
-            array('wp-blocks', 'wp-i18n', 'wp-editor'),
+            array('wp-blocks', 'wp-i18n', 'wp-editor', "wp-element"),
             true
         );
     }
