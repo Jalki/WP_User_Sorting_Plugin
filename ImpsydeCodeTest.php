@@ -5,12 +5,13 @@
  * Description: This is for a coding test with Impsyde to test my skill in PHP
  * Requires at least: 5.2
  * Requires PHP:      7.2
- * Version: 0.5
+ * Version: 0.6
  * Author: Jaleen Bowens-Kelly
  * License: MIT
  */
 
 
+ /*This*/
 class ImpsydeCodeSettings{
     function __construct(){
         add_action('admin_menu', array($this, 'Settings') );
@@ -30,6 +31,7 @@ class ImpsydeCodeSettings{
     }
 }
 
+/*This class initialize the javascript that allows us to download the data we need and an test Alert when entering a post/page editing*/
 class Dataload{
     function __construct(){
     add_action( 'enqueue_block_editor_assets', array($this, 'loadAlertjs') );

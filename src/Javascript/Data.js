@@ -1,18 +1,23 @@
+const fs = require('fs');
+const path = require('path');
 
-var data 
-function GetData(data){
+var data;
+async function GetAPI(data){
   fetch('https://jsonplaceholder.typicode.com/todos/1', {method: 'Get'})
     .then(response=> response.json())
+    return response.json()
+    .catch(error=> {
+      console.log("error!");
+      console.error(error);
+    });
 
 }
-
-function SaveData(data){
-  const finished = (error) =>{
-    if(error){
-      console.error(error)
-      return;
+  const jsonData = JSON.stringify(data);
+  const filePath = path.join(process.cwd(), 'JSONData.json');
+  fs.writeFile(filePath, jsonData, (err) =>{
+    if(err){
+      console.error(err);
+    } else{
+      console.log('File written!')
     }
-  }
-  const jsonData = JSON.stringify(data)
-  fs.writeFile('data.json', jsonData, finished)
-}
+  });
