@@ -12,7 +12,7 @@
 
 
  /*This*/
-class ImpsydeCodeSettings{
+class ImpsydeCodeSetting{
     function __construct(){
         add_action('admin_menu', array($this, 'Settings') );
     }
@@ -79,21 +79,19 @@ if ( !class_exists( "ImpsydeCodeTest" ) ){
     {
         /*Function for installation*/
         static function install(){
-
+            return null;
         }
         /*Function for plugin activation*/
         function __construct(){
             do_action( 'plugin_activate');
-            do_action( 'loadAlertjs' );
-            do_action( 'loadTableblockjs' );
         }
         function load_plugin(){
-
+            return null;
         }
     }
 }
 $ImpsydeClass = new ImpsydeCodeTest();
-$ImpsydeSettingsClass = new ImpsydeCodeSettings();
+$ImpsydeSettingsClass = new ImpsydeCodeSetting();
 $ImpsydeData = new Dataload();
 $ImpsydeCustomBlock = new CustomTable();
 
