@@ -1,5 +1,6 @@
 wp.blocks.registerBlockType('ImpsydePlugin/User-Table', {
-    title: 'Table of Users',
+    title: 'Table-of-Users',
+    label: 'Table of Users',
     icon: 'smiley',
     category: 'common',
     attributes: {

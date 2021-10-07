@@ -67,7 +67,7 @@ class CustomTable{
     function Tableblockjs(){
         wp_enqueue_script( 
             'CustomBlock',
-            plugin_dir_url(__FILE__ . 'src/Javascript/TableBlock.js'),
+            plugin_dir_url('src/Javascript/TableBlock.js', __FILE__),
             array('wp-blocks', 'wp-element'),
             true
         );
