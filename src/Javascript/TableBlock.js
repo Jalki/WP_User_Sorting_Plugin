@@ -7,7 +7,7 @@ wp.blocks.registerBlockType('ImpsydePlugin/User-Table', {
         color: {type: 'string'}
     },
     edit: function(props){
-        return wp.element.createElement('table', null, 'Table');
+        return wp.element.createElement('input', {type: "text"});
     },
     save: function(props){
         return wp.element.createElement('table', null, 'This is Table for users');
