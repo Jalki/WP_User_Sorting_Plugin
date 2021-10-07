@@ -1,11 +1,11 @@
-wp.blocks.registerBlockType("ImpsydePlugin/User-Table", {
-    title: "Table of Users",
-    icon: "smiley",
-    category: "common",
+wp.blocks.registerBlockType('ImpsydePlugin/User-Table', {
+    title: 'Table of Users',
+    icon: 'smiley',
+    category: 'common',
     edit: function(props){
-        return wp.element.createElement("table", null, "Table");
+        return wp.element.createElement('table', null, 'Table');
     },
     save: function(props){
-        return wp.element.createElement("table", null, "This is Table for users");
+        return wp.element.createElement('table', null, 'This is Table for users');
     }
 })
