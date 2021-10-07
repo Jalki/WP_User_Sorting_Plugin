@@ -11,6 +11,8 @@
  */
 
 
+if (! defined('ABSPATH') ) exit;
+
  /*This*/
 class ImpsydeCodeSetting{
     function __construct(){
