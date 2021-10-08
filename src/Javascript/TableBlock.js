@@ -1,4 +1,6 @@
 alert("Code for Custom Block")
+import { registerBlockType } from '@wordpress/blocks';
+
 wp.blocks.registerBlockType('ImpsydePlugin/User-Table', {
     title: 'Table-of-Users',
     icon: 'smiley',
