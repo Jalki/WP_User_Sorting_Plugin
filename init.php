@@ -24,6 +24,7 @@ class ImpsydeCodeSetting{
 class Dataload{
     function __construct(){
     add_action( 'enqueue_block_editor_assets', array($this, 'loadAlertjs') );
+    add_action('enqueue_block_edito_assests', array($this, 'loadDatajs'));
     }
     /*Fires an Javascript alert when loading in block editor on any posts or page!*/
     function loadAlertjs(){
