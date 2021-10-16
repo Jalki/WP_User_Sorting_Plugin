@@ -1,4 +1,4 @@
-alert("Code for Custom Block")
+alert("Code for Custom Block");
 import { registerBlockType } from '@wordpress/blocks';
 
 wp.blocks.registerBlockType('ImpsydePlugin/User-Table', {
@@ -15,4 +15,4 @@ wp.blocks.registerBlockType('ImpsydePlugin/User-Table', {
     save: function(props){
         return wp.element.createElement('table', null, 'This is Table for users');
     }
-})
+});
