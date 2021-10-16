@@ -23,8 +23,8 @@ class ImpsydeCodeSetting{
 /*This class initialize the javascript that allows us to download the data we need and an test Alert when entering a post/page editing*/
 class Dataload{
     function __construct(){
-    add_action( 'enqueue_block_editor_assets', array($this, 'loadAlertjs') );
-    add_action('enqueue_block_edito_assests', array($this, 'loadDatajs'));
+    add_action( 'enqueue_block_editor_assets', array($this, 'loadAlertjs'));
+    add_action( 'enqueue_block_editor_assets', array($this, 'loadDatajs'));
     }
     /*Fires an Javascript alert when loading in block editor on any posts or page!*/
     function loadAlertjs(){
@@ -50,7 +50,7 @@ class Dataload{
 /*This class initialize and creates the custom block type that will contain our table of users*/
 class CustomTable{
     function __construct(){
-        add_action( "enqueue_block_editor_assets", array($this, "Tableblockjs"));
+        add_action( 'enqueue_block_editor_assets', array($this, "Tableblockjs"));
     }
     function Tableblockjs(){
         wp_enqueue_script( 
