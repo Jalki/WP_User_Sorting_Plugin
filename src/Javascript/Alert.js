@@ -1,1 +1,0 @@
-alert("Code for Custom Block")

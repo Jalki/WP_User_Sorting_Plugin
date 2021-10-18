@@ -52,8 +52,15 @@ class CustomTable{
     function __construct(){
         add_action( 'enqueue_block_editor_assets', array($this, "Tableblockjs"));
     }
-    function Tableblockjs(){
-        wp_enqueue_script( 
+
+    function register_block(){
+        register_block_type( 'ImpsydePlugin/User-Table', array(
+            'editor_script' => '',
+            'editor_style' => '',
+            'style'        => '',
+        ) );
+
+        wp_register_script( 
             'Customblock',
             plugin_dir_url(__FILE__) . "src/Javascript/TableBlock.js",
             array('wp-blocks'),
@@ -80,6 +87,7 @@ if ( !class_exists( "ImpsydeCodeTest" ) ){
         }
     }
 }
+/*Creates and init classes*/
 $ImpsydeClass = new ImpsydeCodeTest();
 $ImpsydeSettingsClass = new ImpsydeCodeSetting();
 $ImpsydeData = new Dataload();
