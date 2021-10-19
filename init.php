@@ -81,6 +81,7 @@ class CustomTable{
             'editor_style' => 'User-Sorting-Custom-Editor',
             'style'        => 'User-Sorting-Custom',
         ) );
+    }
 }
 
  /*Impsyde check for class*/
