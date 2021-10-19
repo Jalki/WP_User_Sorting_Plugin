@@ -50,23 +50,37 @@ class Dataload{
 /*This class initialize and creates the custom block type that will contain our table of users*/
 class CustomTable{
     function __construct(){
-        add_action( 'enqueue_block_editor_assets', array($this, "Tableblockjs"));
+        add_action( 'init', array($this, "register_block"));
     }
 
     function register_block(){
-        register_block_type( 'ImpsydePlugin/User-Table', array(
-            'editor_script' => '',
-            'editor_style' => '',
-            'style'        => '',
-        ) );
 
         wp_register_script( 
-            'Customblock',
-            plugin_dir_url(__FILE__) . "src/Javascript/TableBlock.js",
-            array('wp-blocks'),
-            true
+            'User-Sorting-Plugin-Script',
+            plugins_url( 'src\Javascript\TableBlock.js', __FILE__ ),
+            $asset_file['dependencies'],
+            $asset_file['version']
         );
-    }
+        
+        wp_register_style( 
+            'User-Sorting-Custom-Editor',
+            plugins_url( 'src\CSS\editor.css', __FILE__ ),
+            array(),
+            filemtime(plugin_dir_path( __FILE__ ) . 'src\CSS\editor.css')
+        );
+
+        wp_register_style( 
+            'User-Sorting-Custom',
+            plugins_url( 'src\CSS\style.css', __FILE__ ),
+            array(),
+            filemtime(plugin_dir_path( __FILE__ ) . 'src\CSS\style.css')
+        );
+
+        register_block_type( 'ImpsydePlugin/User-Table', array(
+            'editor_script' => 'User-Sorting-Plugin-Script',
+            'editor_style' => 'User-Sorting-Custom-Editor',
+            'style'        => 'User-Sorting-Custom',
+        ) );
 }
 
  /*Impsyde check for class*/
