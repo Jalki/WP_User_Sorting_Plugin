@@ -6,13 +6,12 @@ registerBlockType('ImpsydePlugin/User-Table', {
     icon: 'smiley',
     category: 'common',
     attributes: {
-        content:{type: 'string'},
-        color: {type: 'string'}
+        title:{}
     },
     edit: function(props){
-        return wp.element.createElement('input', {type: "text"});
+        return createElement('input', {type: "text"});
     },
     save: function(props){
-        return wp.element.createElement('table', null, 'This is Table for users');
+        return createElement('table', null, 'This is Table for users');
     }
 });
