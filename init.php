@@ -57,23 +57,23 @@ class CustomTable{
 
         wp_register_script( 
             'User-Sorting-Plugin-Script',
-            plugins_url( 'src\Javascript\TableBlock.js', __FILE__ ),
+            plugin_url( 'src/Javascript/TableBlock.js', __FILE__ ),
             $asset_file['dependencies'],
             $asset_file['version']
         );
         
         wp_register_style( 
             'User-Sorting-Custom-Editor',
-            plugins_url( 'src\CSS\editor.css', __FILE__ ),
+            plugins_url( 'src/CSS/editor.css', __FILE__ ),
             array(),
-            filemtime(plugin_dir_path( __FILE__ ) . 'src\CSS\editor.css')
+            filemtime(plugin_dir_path( __FILE__ ) . 'src/CSS/editor.css')
         );
 
         wp_register_style( 
             'User-Sorting-Custom',
-            plugins_url( 'src\CSS\style.css', __FILE__ ),
+            plugins_url( 'src/CSS/style.css', __FILE__ ),
             array(),
-            filemtime(plugin_dir_path( __FILE__ ) . 'src\CSS\style.css')
+            filemtime(plugin_dir_path( __FILE__ ) . 'src/CSS/style.css')
         );
 
         register_block_type( 'ImpsydePlugin/User-Table', array(
