@@ -57,7 +57,7 @@ class CustomTable{
 
         wp_register_script( 
             'User-Sorting-Plugin-Script',
-            plugin_url( 'src/Javascript/TableBlock.js', __FILE__ ),
+            plugin_dir_url(__FILE__) . "src/Javascript/TableBlock.js",
             $asset_file['dependencies'],
             $asset_file['version']
         );
