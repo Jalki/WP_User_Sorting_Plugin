@@ -50,7 +50,7 @@ class Dataload{
 /*This class initialize and creates the custom block type that will contain our table of users*/
 class CustomTable{
     function __construct(){
-        add_action( 'enqueue_block_editor_assets' , array($this, "register_block"));
+        add_action( 'enqueue_block_editor_assets' , array($this, 'register_block'));
     }
 
     function register_block(){
