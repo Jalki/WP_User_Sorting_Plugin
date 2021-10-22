@@ -50,14 +50,14 @@ class Dataload{
 /*This class initialize and creates the custom block type that will contain our table of users*/
 class CustomTable{
     function __construct(){
-        add_action( 'init', array($this, "register_block"));
+        add_action( 'enqueue_block_editor_assets' , array($this, "register_block"));
     }
 
     function register_block(){
 
         wp_register_script( 
             'User-Sorting-Plugin-Script',
-            plugin_dir_url(__FILE__) . "src/Javascript/TableBlock.js",
+            plugin_dir_url(__FILE__) . 'src/Javascript/TableBlock.js',
             $asset_file['dependencies'],
             $asset_file['version']
         );
@@ -65,14 +65,14 @@ class CustomTable{
         wp_register_style( 
             'User-Sorting-Custom-Editor',
             plugins_url( 'src/CSS/editor.css', __FILE__ ),
-            array(),
+            array('wp-blocks', 'wp-editor'),
             filemtime(plugin_dir_path( __FILE__ ) . 'src/CSS/editor.css')
         );
 
         wp_register_style( 
             'User-Sorting-Custom',
             plugins_url( 'src/CSS/style.css', __FILE__ ),
-            array(),
+            array('wp-blocks','wp-editor'),
             filemtime(plugin_dir_path( __FILE__ ) . 'src/CSS/style.css')
         );
 
