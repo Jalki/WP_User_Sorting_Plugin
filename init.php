@@ -44,14 +44,13 @@ class Dataload{
             true
         );
 }
-    
 }
 
 /*This initialize and creates the custom block type that will contain our table of users*/
 function loadMyBlockFiles() {
     wp_enqueue_script(
-      'Impyside-Code-Test',
-      plugin_dir_url(__FILE__) . 'src/Javascript/TableBlock.js',
+      'Impsyde-Code-Test',
+      plugin_dir_url(__FILE__) . 'TableBlock.js',
       array('wp-blocks', 'wp-i18n', 'wp-editor'),
       true
     );
