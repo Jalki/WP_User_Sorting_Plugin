@@ -1,4 +1,4 @@
-alert("Code for Custom Block");
+
 
 registerBlockType('ImpsydePlugin/User-Table', {
     title: 'Table-of-Users',

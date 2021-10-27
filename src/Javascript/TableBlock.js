@@ -1,12 +1,13 @@
 alert("Code for Custom Block");
 import { registerBlockType } from '@wordpress/blocks';
 
-registerBlockType('ImpsydePlugin/User-Table', {
+wp.blocks.registerBlockType('brad/border-box', {
     title: 'Table-of-Users',
     icon: 'smiley',
     category: 'common',
     attributes: {
-        title:{}
+        content: {type: 'string'},
+        color: {type:'string'}
     },
     edit: function(props){
         return createElement('input', {type: "text"});
