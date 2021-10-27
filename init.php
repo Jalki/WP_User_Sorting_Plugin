@@ -55,7 +55,7 @@ class CustomTable{
 
     function register_block(){
 
-        wp_register_script( 
+        wp_enqueue_script( 
             'User-Sorting-Plugin-Script',
             plugin_dir_url(__FILE__) . "src/Javascript/Tableblock.js",
             $asset_file['dependencies'],
