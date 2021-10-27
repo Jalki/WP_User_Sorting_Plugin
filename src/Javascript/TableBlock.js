@@ -1,5 +1,5 @@
 wp.blocks.registerBlockType('Test/border-box', {
-    title: 'My Cool Border Box',
+    title: 'User-Table',
     icon: 'smiley',
     category: 'common',
     attributes: {

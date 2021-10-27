@@ -51,7 +51,7 @@ class Dataload{
 function loadMyBlockFiles() {
     wp_enqueue_script(
       'Impyside-Code-Test',
-      plugin_dir_url(__FILE__) . 'src\Javascript\TableBlock.js',
+      plugin_dir_url(__FILE__) . 'src/Javascript/TableBlock.js',
       array('wp-blocks', 'wp-i18n', 'wp-editor'),
       true
     );
