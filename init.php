@@ -58,25 +58,8 @@ function loadMyBlockFiles() {
    
 add_action('enqueue_block_editor_assets', 'loadMyBlockFiles');
 
- /*Impsyde check for class*/
-if ( !class_exists( "ImpsydeCodeTest" ) ){
-/*Class Impysde*/
-    class ImpsydeCodeTest
-    {
-        /*Function for installation*/
-        static function install(){
-            return null;
-        }
-        /*Function for plugin activation*/
-        function __construct(){
-            do_action( 'plugin_activate');
-        }
-        function load_plugin(){
-            return null;
-        }
-    }
-}
+ 
 /*Creates and init classes*/
-$ImpsydeClass = new ImpsydeCodeTest();
+/**$ImpsydeClass = new ImpsydeCodeTest();*/
 $ImpsydeSettingsClass = new ImpsydeCodeSetting();
 $ImpsydeData = new Dataload();
