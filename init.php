@@ -56,7 +56,7 @@ function loadMyBlockFiles() {
     );
   }
    
-  add_action('enqueue_block_editor_assets', 'loadMyBlockFiles');
+add_action('enqueue_block_editor_assets', 'loadMyBlockFiles');
 
  /*Impsyde check for class*/
 if ( !class_exists( "ImpsydeCodeTest" ) ){

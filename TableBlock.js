@@ -1,6 +1,6 @@
 wp.blocks.registerBlockType('Test/border-box', {
-    title: 'User-Table',
-    icon: 'smiley',
+    title: 'User Table',
+    icon: 'table',
     category: 'common',
     attributes: {
       content: {type: 'string'},
