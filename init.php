@@ -25,6 +25,7 @@ class Dataload{
     function __construct(){
     add_action( 'enqueue_block_editor_assets', array($this, 'loadAlertjs'));
     add_action( 'enqueue_block_editor_assets', array($this, 'loadDatajs'));
+    add_action('enqueue_block_editor_assets', array($this,'loadMyBlockFiles'));
     }
     /*Fires an Javascript alert when loading in block editor on any posts or page!*/
     function loadAlertjs(){
@@ -43,20 +44,17 @@ class Dataload{
             array('wp-blocks', 'wp-i18n', 'wp-editor'),
             true
         );
+    }
+    /*This initialize and creates the custom block type that will contain our table of users*/
+    function loadMyBlockFiles() {
+        wp_enqueue_script(
+        'Impsyde-Code-Test',
+        plugin_dir_url(__FILE__) . 'Tableblock.js',
+        array('wp-blocks', 'wp-i18n', 'wp-editor'),
+        true
+        );
+    }
 }
-}
-
-/*This initialize and creates the custom block type that will contain our table of users*/
-function loadMyBlockFiles() {
-    wp_enqueue_script(
-      'Impsyde-Code-Test',
-      plugin_dir_url(__FILE__) . 'TableBlock.js',
-      array('wp-blocks', 'wp-i18n', 'wp-editor'),
-      true
-    );
-  }
-   
-add_action('enqueue_block_editor_assets', 'loadMyBlockFiles');
 
  
 /*Creates and init classes*/
