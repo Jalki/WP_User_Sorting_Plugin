@@ -15,7 +15,6 @@
     exit;
 }*/
 
-require_once plugin_dir_path( __FILE__ ) . 'init.php';
-require_once plugin_dir_path( __FILE__ ) . 'block.php';
+require plugin_dir_path( __FILE__ ) . 'init.php';
  
 ?>
