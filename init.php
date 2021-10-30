@@ -59,5 +59,6 @@ class Dataload{
  
 /*Creates and init classes*/
 /**$ImpsydeClass = new ImpsydeCodeTest();*/
-$ImpsydeSettingsClass = new ImpsydeCodeSetting();
 $ImpsydeData = new Dataload();
+$ImpsydeSettingsClass = new ImpsydeCodeSetting();
+?>
