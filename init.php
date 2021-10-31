@@ -22,7 +22,7 @@ class ImpsydeCodeSetting{
 
 /*This class initialize the javascript that allows us to download the data we need and an test Alert when entering a post/page editing*/
 class Dataload{
-    function __construct(){
+    public function __construct(){
     add_action( 'enqueue_block_editor_assets', array($this, 'loadAlertjs'));
     add_action( 'enqueue_block_editor_assets', array($this, 'loadDatajs'));
     add_action('enqueue_block_editor_assets', array($this,'loadMyBlockFiles'));
