@@ -10,7 +10,7 @@ class CustomBlock{
     function loadMyBlockFiles() {
         wp_enqueue_script(
         'Impsyde-Code-Test',
-        plugin_dir_url(__FILE__) . 'Customblock.js',
+        plugin_dir_url(__FILE__) . 'src/CustomBlock/CustomBlock.js',
         array('wp-blocks', 'wp-i18n', 'wp-editor'),
         true
         );
