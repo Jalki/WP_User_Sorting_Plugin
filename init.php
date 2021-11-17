@@ -31,7 +31,7 @@ class Data
         add_action('enqueue_block_editor_assets', array($this, 'CustomBlock'));
     }
 
-    function Data(){
+    function CustomBlock(){
         wp_enqueue_script(
             'Impsyde-Code-Test',
             plugin_dir_url(__FILE__) . 'Tableblock.js',
@@ -43,7 +43,7 @@ class Data
 
 class CustomBlock
 {
-    
+
 }
 
  
