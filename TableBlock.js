@@ -1,12 +1,12 @@
 const { registerBlockType } = window.wp.blocks;
 const { __ } = window.wp.i18n;
 
-registerBlockType('Test/border-box', {
+wp.blocks.registerBlockType(
+    //Name Parameter
+    'Test/border-box', {
     title: 'User Table',
-    icon: 'table',
+    icon: 'wordpress-alt',
     category: 'common',
-    attributes: {
-        content: { type: 'string' },
-        color: { type: 'string' }
-    },
+    edit: () => <p>PLS WORK </p>,
+    save: () => <p>PLS WORK</p>
 })
