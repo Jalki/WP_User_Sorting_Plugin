@@ -1,5 +1,19 @@
-const { registerBlockType } = window.wp.blocks;
-const { __ } = window.wp.i18n;
+(function (blocks, editor, components, i18n, element) {
+    //Custome block code
+    var CreateEl = wp.element.createElement
+    var RichText = wp.editor.RichText
+    var BlockControls = wp.editor.BlockControls
+    var AlignmentToolbar = wp.editor.AlignmentToolbar
+    var MediaUpload = wp.editor.MediaUpload
+    var InspectorControls = wp.editor.InspectorControls
+    var TextControl = components.TextControl
+})(
+    window.wp.blocks,
+    window.wp.editor,
+    window.wp.components,
+    window.wp.i18n,
+    window.wp.element
+)
 
 wp.blocks.registerBlockType(
     //Name Parameter
