@@ -56,7 +56,7 @@ class CustomBlock
             'impsyde-block-script',
             plugins_url( 'TableBlock.js', __FILE__),
             array('wp-blocks', 'wp-components', 'wp-element', 'wp-i18n', 'wp-editor'),
-            filemtime(plugin_dir_path(__FILE__) . 'block.js'),
+            filemtime(plugin_dir_path(__FILE__) . 'TableBlock.js'),
             true
         );
 
