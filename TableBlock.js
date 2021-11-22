@@ -17,7 +17,7 @@
 
 wp.blocks.registerBlockType(
     //Name Parameter
-    'Test/border-box', {
+    'ImpsydeTest/UserTable', {
     title: 'User Table',
     icon: 'wordpress-alt',
     category: 'common',

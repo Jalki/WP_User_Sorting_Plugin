@@ -47,7 +47,7 @@ class CustomBlock
 {
     function __construct()
     {
-        add_action('init', array($this, "Registerblock"));
+        add_action('register_script', array($this, "Registerblock"));
     }
     function Registerblock()
     {
@@ -62,7 +62,7 @@ class CustomBlock
 
         wp_register_style(
             'impsyde-block-editor-style',
-            plugins_url( 'src\CSS\editor.css', __FILE__ ),
+            plugins_url( 'src/CSS/editor.css', __FILE__ ),
             array( 'wp-edit-blocks'),
             filemtime(plugin_dir_plugin(__FILE__) . 'src\CSS\editor.css')
         );
@@ -73,12 +73,11 @@ class CustomBlock
             array(),
             filemtime(plugin_dir_path(__FILE__) . 'src\CSS\style.css')
         );
-
-        register_block_type('', array(
+        register_block_type('ImpsydeTest/UserTable', array(
         'editor_script' => 'impsyde-block-script',
         'editor_style' => 'impsyde-block-editor-style',
         'style' => 'impsyde-block-editor-frontend-style'
-    ));
+    )   );
     }
 }
 
