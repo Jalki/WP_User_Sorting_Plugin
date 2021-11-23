@@ -15,7 +15,7 @@
     window.wp.element
 )
 
-alert("Working?")
+alert("Working?");
 
 wp.blocks.registerBlockType(
     //Name Parameter
