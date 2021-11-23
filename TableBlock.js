@@ -33,7 +33,7 @@ registerBlockType(
             source: 'children',
             selector: 'h5'
         }
-    }
+    },
     edit: () => <p>PLS WORK </p>,
     save: () => <p>PLS WORK</p>
 })
