@@ -73,7 +73,7 @@ class CustomBlock
             array(),
             filemtime(plugin_dir_path(__FILE__) . 'src\CSS\style.css')
         );
-        register_block_type('ImpsydeTest/UserTable', array(
+        register_block_type('impsydetest/usertable', array(
         'editor_script' => 'impsyde-block-script',
         'editor_style' => 'impsyde-block-editor-style',
         'style' => 'impsyde-block-editor-frontend-style'

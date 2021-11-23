@@ -15,14 +15,25 @@
     window.wp.element
 )
 
-alert("Working?");
-
-wp.blocks.registerBlockType(
+registerBlockType(
     //Name Parameter
-    'ImpsydeTest/UserTable', {
-    title: 'User Table',
+    'impsydetest/usertable', {
+    title: i18n.__('User_Table'),
+    description: i18n.__('A custom block made for the Impsyde Code test that upload a table of users'),
     icon: 'wordpress-alt',
     category: 'common',
+    attributes: {
+        title:{
+            type: 'array',
+            source: 'children',
+            selector: 'h3'
+        },
+        subtitle:{
+            type:'array',
+            source: 'children',
+            selector: 'h5'
+        }
+    }
     edit: () => <p>PLS WORK </p>,
     save: () => <p>PLS WORK</p>
 })
