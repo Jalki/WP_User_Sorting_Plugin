@@ -47,7 +47,7 @@ class CustomBlock
 {
     function __construct()
     {
-        add_action('register_script', array($this, "Registerblock"));
+        add_action('init', array($this, "Registerblock"));
     }
     function Registerblock()
     {
@@ -86,7 +86,7 @@ class CustomBlock
 /**$ImpsydeClass = new ImpsydeCodeTest();*/
 $Data = new Data();
 $SettingsClass = new CodeSettings();
-$CustomBlock = new CustomBlock();
+$Customblock = new CustomBlock();
 ?>
 
 

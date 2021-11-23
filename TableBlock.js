@@ -15,6 +15,8 @@
     window.wp.element
 )
 
+alert("Working?")
+
 wp.blocks.registerBlockType(
     //Name Parameter
     'ImpsydeTest/UserTable', {
