@@ -52,16 +52,16 @@ class CustomBlock
 
         wp_register_style(
             'impsyde-block-editor-style',
-            plugins_url( 'src/CSS/editor.css', __FILE__ ),
+            plugins_url( 'src/css/editor.css', __FILE__ ),
             array( 'wp-edit-blocks'),
-            filemtime(plugin_dir_plugin(__FILE__) . 'src\CSS\editor.css')
+            filemtime(plugin_dir_plugin(__FILE__) . 'src\css\editor.css')
         );
 
         wp_register_style(
             'impsyde-block-editor-frontend-style',
             plugins_url('style.css', __FILE__),
             array(),
-            filemtime(plugin_dir_path(__FILE__) . 'src\CSS\style.css')
+            filemtime(plugin_dir_path(__FILE__) . 'src\css\style.css')
         );
         register_block_type('impsydetest/usertable', array(
         'editor_script' => 'impsyde-block-script',
