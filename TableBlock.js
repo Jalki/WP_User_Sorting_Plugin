@@ -34,6 +34,19 @@ registerBlockType(
             selector: 'h5'
         }
     },
-    edit: () => <p>PLS WORK </p>,
-    save: () => <p>PLS WORK</p>
+    edit: function (props) {
+        var attributes = props.attributes
+        var alignment = props.attributes.alignment
+        var linkedURL = props.attributes.linkedURL
+        
+        function onChangeAlignment (newAlignment){
+            props.setAtrributes({ alignment: newAlignment })
+        }
+        return []
+    },
+    save: function (props){
+        var attributes = props.attributes
+        var alignment = props.attributes.alignment
+        var linkedURL = props.attributes.linkedURL
+    }
 })

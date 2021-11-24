@@ -26,20 +26,10 @@ class CodeSettings{
 /*This class initialize the javascript that allows us to download the data we need and an test Alert when entering a post/page editing*/
 class Data
 {
-    private $DataCollected;
-    
-    function __construct()
-    {
-        add_action('enqueue_block_editor_assets', array($this, 'CustomBlock'));
-    }
 
-    function CustomBlock(){
-        wp_enqueue_script(
-            'Impsyde-Code-Test',
-            plugin_dir_url(__FILE__) . 'Tableblock.js',
-            array('wp-blocks', 'wp-i18n', 'wp-editor'),
-            true
-            );
+    function GetData()
+    {
+        $var = $DataCollected;
     }
 }
 
@@ -47,7 +37,7 @@ class CustomBlock
 {
     function __construct()
     {
-        add_action('init', array($this, "Registerblock"));
+        add_action('enqueue_block_assets', array($this, 'Registerblock'));
     }
     function Registerblock()
     {
