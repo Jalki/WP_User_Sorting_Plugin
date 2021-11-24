@@ -37,9 +37,9 @@ class CustomBlock
 {
     function __construct()
     {
-        add_action('enqueue_block_assets', array($this, 'Registerblock'));
+        add_action('enqueue_block_assets', array($this, 'registerblock'));
     }
-    function Registerblock()
+    function registerblock()
     {
         //Register the script for the block below
         wp_register_script(
@@ -70,8 +70,6 @@ class CustomBlock
     )   );
     }
 }
-
- 
 /*Creates and init classes*/
 /**$ImpsydeClass = new ImpsydeCodeTest();*/
 $Data = new Data();
