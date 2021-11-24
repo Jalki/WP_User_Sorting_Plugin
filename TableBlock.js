@@ -15,7 +15,7 @@
     window.wp.element
 )
 
-registerBlockType(
+wp_registerBlockType(
     //Name Parameter
     'impsydetest/usertable', {
     title: i18n.__('User_Table'),
