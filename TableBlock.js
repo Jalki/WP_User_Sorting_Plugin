@@ -40,11 +40,6 @@ wp.blocks.registerBlockType(
         var attributes = props.attributes
         var alignment = props.attributes.alignment
         var linkedURL = props.attributes.linkedURL
-        
-        function onChangeAlignment (newAlignment){
-            props.setAtrributes({ alignment: newAlignment })
-        }
-        return []
     },
     save: (props) => 
     {
