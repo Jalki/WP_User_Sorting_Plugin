@@ -15,6 +15,6 @@
     exit;
 }*/
 
-require plugin_dir_path( __FILE__ ) . 'src\PHP\customblock.php';
+require plugin_dir_path( __FILE__ ) . '/src/PHP/customblock.php';
  
 ?>
