@@ -42,32 +42,7 @@ class CustomBlock
     function registerblock()
     {
         //Register the script for the block below
-        wp_register_script(
-            'impsyde-block-script',
-            plugins_url( 'TableBlock.js', __FILE__),
-            array('wp-blocks', 'wp-components', 'wp-element', 'wp-i18n', 'wp-editor'),
-            filemtime(plugin_dir_path(__FILE__) . 'TableBlock.js'),
-            true
-        );
-
-        wp_register_style(
-            'impsyde-block-editor-style',
-            plugins_url( 'src/css/editor.css', __FILE__ ),
-            array( 'wp-edit-blocks'),
-            filemtime(plugin_dir_plugin(__FILE__) . 'src\css\editor.css')
-        );
-
-        wp_register_style(
-            'impsyde-block-editor-frontend-style',
-            plugins_url('style.css', __FILE__),
-            array(),
-            filemtime(plugin_dir_path(__FILE__) . 'src\css\style.css')
-        );
-        register_block_type('impsydetest/usertable', array(
-        'editor_script' => 'impsyde-block-script',
-        'editor_style' => 'impsyde-block-editor-style',
-        'style' => 'impsyde-block-editor-frontend-style'
-    )   );
+        wp_enqueue_script('customblock', plugin_dir_url(__FILE__). 'tableblock.js', array('wp-blocks'));
     }
 }
 /*Creates and init classes*/
