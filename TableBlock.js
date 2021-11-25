@@ -15,9 +15,10 @@
     window.wp.element
 )
 
-wp_registerBlockType(
+wp.blocks.registerBlockType(
     //Name Parameter
-    'impsydetest/usertable', {
+    'impsydetest/usertable', 
+    {
     title: i18n.__('User_Table'),
     description: i18n.__('A custom block made for the Impsyde Code test that upload a table of users'),
     icon: 'wordpress-alt',
@@ -34,7 +35,8 @@ wp_registerBlockType(
             selector: 'h5'
         }
     },
-    edit: function (props) {
+    edit: (props) =>
+    {
         var attributes = props.attributes
         var alignment = props.attributes.alignment
         var linkedURL = props.attributes.linkedURL
@@ -44,7 +46,8 @@ wp_registerBlockType(
         }
         return []
     },
-    save: function (props){
+    save: (props) => 
+    {
         var attributes = props.attributes
         var alignment = props.attributes.alignment
         var linkedURL = props.attributes.linkedURL

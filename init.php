@@ -37,7 +37,7 @@ class CustomBlock
 {
     function __construct()
     {
-        add_action('enqueue_block_assets', array($this, 'registerblock'));
+        add_action('init', array($this, 'registerblock'));
     }
     function registerblock()
     {
