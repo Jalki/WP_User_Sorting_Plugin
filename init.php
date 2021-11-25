@@ -37,7 +37,7 @@ class CustomBlock
 {
     function __construct()
     {
-        add_action('enqueue_block_assets', array($this, 'registerblock'));
+        add_action('enqueue_block_editor_assets', array($this, 'registerblock'));
     }
     function registerblock()
     {
@@ -72,7 +72,7 @@ class CustomBlock
 }
 /*Creates and init classes*/
 /**$ImpsydeClass = new ImpsydeCodeTest();*/
-$Data = new Data();
+/**$Data = new Data();*/
 $SettingsClass = new CodeSettings();
 $Customblock = new CustomBlock();
 ?>

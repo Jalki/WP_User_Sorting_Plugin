@@ -18,16 +18,13 @@ wp.blocks.registerBlockType(
             selector: 'h5'
         }
     },
-    edit: (props) =>
+    edit: function ()
     {
-        var attributes = props.attributes
-        var alignment = props.attributes.alignment
-        var linkedURL = props.attributes.linkedURL
+
+        return wp.element.createElement("h3", null, "Hello, this is a test")
     },
-    save: (props) => 
+    save: function () 
     {
-        var attributes = props.attributes
-        var alignment = props.attributes.alignment
-        var linkedURL = props.attributes.linkedURL
+        return wp.element.createElement("h3", null, "Hello, this is a test")
     }
 })
