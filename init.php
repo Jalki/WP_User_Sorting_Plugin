@@ -49,7 +49,7 @@ class CustomBlock
 /**$ImpsydeClass = new ImpsydeCodeTest();*/
 /**$Data = new Data();*/
 $SettingsClass = new CodeSettings();
-$Customblock = new CustomBlock();
+/**$Customblock = new CustomBlock();*/
 ?>
 
 

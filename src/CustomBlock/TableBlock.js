@@ -1,4 +1,6 @@
-wp.blocks.registerBlockType(
+const { registerBlockType } = wp.blocks;
+
+registerBlockType(
     //Name Parameter
     'impsydetest/usertable', 
     {
