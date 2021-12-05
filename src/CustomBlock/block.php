@@ -2,7 +2,7 @@
 
 function loadMyBlockFiles() {
   wp_enqueue_script(
-    'my-super-unique-handle',
+    'impsyde-code-test-block',
     plugin_dir_url(__FILE__) . 'block.js',
     array('wp-blocks', 'wp-i18n', 'wp-editor'),
     true

@@ -1,5 +1,5 @@
-wp.blocks.registerBlockType('brad/border-box', {
-    title: 'My Cool Border Box',
+wp.blocks.registerBlockType('impsyde/impsyde-table', {
+    title: 'Impsyde-Table-Users',
     icon: 'smiley',
     category: 'common',
     attributes: {
