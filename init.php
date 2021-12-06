@@ -1,6 +1,6 @@
 <?php
 
-/*This*/
+/*This class is for the settings options the user is allow to edit. Make sure to have an option for restore default settings!*/
 class CodeSettings{
     function __construct(){
         add_action('admin_menu', array($this, 'Settings') );
@@ -15,9 +15,38 @@ class CodeSettings{
         </div>
         <div>
             <h2>Color</h2>
+                <div>
+                    <h5>
+                        Primary-Color
+                    </h5>
+                    <h5>
+                        Secondary-Color
+                    </h5>
+                    <h5>
+                        Font-Color
+                    </h5>
+                </div>
+        </div>
+        <hr>
+        <div>
+            <h2>Spacing</h2>
+            <div>
+                <h5>
+                    Table Column Spacing
+                </h5>
+                <h5>
+                    Table Row Spacing
+                </h5>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <h2>Font</h2>
         </div>
         <div>
-            <h2></h2>
+            <button>
+                <h2>Restore Default Settings</h2>
+            </button>
         </div>
     <?php
     }
@@ -42,7 +71,7 @@ class Data
 
     function SetData()
     {
-        
+        wp_enqueue_script();
     }
 }
 

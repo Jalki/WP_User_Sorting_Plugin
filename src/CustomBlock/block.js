@@ -1,6 +1,6 @@
 wp.blocks.registerBlockType('impsyde/impsyde-table', {
     title: 'Impsyde-Table-Users',
-    icon: 'smiley',
+    icon: 'table',
     category: 'common',
     attributes: {
       content: {type: 'string'},
