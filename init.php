@@ -23,30 +23,31 @@ class CodeSettings{
     }
 }
 
-/*This class initialize the javascript that allows us to download the data we need and an test Alert when entering a post/page editing*/
+/*This class initialize the javascript that allows us to download the data we need and then place the data into the custom block that will show the information*/
 class Data
 {
+    function __construct(){
+        add_action();
+    }
 
     function GetData()
     {
-        $var = $DataCollected;
+        wp_enqueue_script(
+            'Get_Data',
+            plugin_dir_url(__FILE__) . 'src\Javascript\Data.js',
+            array('wp-blocks', 'wp-i18n', 'wp-editor'),
+            true
+            );
+    }
+
+    function SetData()
+    {
+        
     }
 }
 
-class CustomBlock
-{
-    function __construct()
-    {
-        add_action('enqueue_block_editor_assets', array($this, 'registerblock'));
-    }
-    function registerblock()
-    {
-        //Register the script for the block below
-        wp_enqueue_script('customblock', plugin_dir_url(__FILE__). 'tableblock.js', array('wp-blocks'));
-    }
-}
+
 /*Creates and init classes*/
-/**$ImpsydeClass = new ImpsydeCodeTest();*/
 /**$Data = new Data();*/
 $SettingsClass = new CodeSettings();
 /**$Customblock = new CustomBlock();*/

@@ -21,10 +21,9 @@ wp.blocks.registerBlockType('impsyde/impsyde-table', {
         wp.element.createElement(
           "h3",
           null,
-          "Your Cool Border Box"
+          "Impsyde Code Test"
         ),
-        wp.element.createElement("input", { type: "text", value: props.attributes.content, onChange: updateContent }),
-        wp.element.createElement(wp.components.ColorPicker, { color: props.attributes.color, onChangeComplete: updateColor })
+        wp.element.createElement("input", { type: "text", value: props.attributes.content, onChange: updateContent })
       );
     },
     save: function(props) {
