@@ -3,7 +3,7 @@ const path = require('path');
 
 var data;
 async function GetAPI(data){
-  fetch('https://jsonplaceholder.typicode.com/todos/1', {method: 'Get'})
+  fetch('https://jsonplaceholder.typicode.com/users', {method: 'Get'})
     .then(response=> response.json())
     return response.json()
     .catch(error=> {

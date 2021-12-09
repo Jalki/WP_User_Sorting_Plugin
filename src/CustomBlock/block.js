@@ -28,9 +28,52 @@ wp.blocks.registerBlockType('impsyde/impsyde-table', {
     },
     save: function(props) {
       return wp.element.createElement(
-        "h3",
-        { style: { border: "5px solid " + props.attributes.color } },
-        props.attributes.content
+        "table",
+        null,
+          wp.element.createElement(
+          "tr",
+          null,
+          wp.element.createElement(
+            "td",
+            null,
+              wp.element.createElement("h3", null, "id")
+          ),
+          wp.element.createElement(
+            "td",
+            null,
+            wp.element.createElement("h3", null, "name")
+          ),
+          wp.element.createElement(
+            "td",
+            null,
+            wp.element.createElement("h3", null, "username")
+          ),
+          wp.element.createElement(
+            "td",
+            null,
+            wp.element.createElement("h3", null, "email")
+          ),
+          wp.element.createElement(
+            "td",
+            null,
+            wp.element.createElement("h3", null, "address")
+          ),
+          wp.element.createElement(
+            "td",
+            null,
+            wp.element.createElement("h3", null, "phone")
+          ),
+          wp.element.createElement(
+            "td",
+            null,
+            wp.element.createElement("h3", null, "website")
+          ),
+          wp.element.createElement(
+            "td",
+            null,
+            wp.element.createElement("h3", null, "company")
+          )
+        )
       );
     }
   })
