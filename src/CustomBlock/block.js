@@ -27,50 +27,44 @@ wp.blocks.registerBlockType('impsyde/impsyde-table', {
       );
     },
     save: function(props) {
+      function updateContent(event){
+        props.setAttributes({content: event.target.value})
+      }
+
       return wp.element.createElement(
         "table",
-        null,
           wp.element.createElement(
           "tr",
-          null,
           wp.element.createElement(
             "td",
-            null,
               wp.element.createElement("h3", null, "id")
           ),
           wp.element.createElement(
             "td",
-            null,
             wp.element.createElement("h3", null, "name")
           ),
           wp.element.createElement(
             "td",
-            null,
             wp.element.createElement("h3", null, "username")
           ),
           wp.element.createElement(
             "td",
-            null,
             wp.element.createElement("h3", null, "email")
           ),
           wp.element.createElement(
             "td",
-            null,
             wp.element.createElement("h3", null, "address")
           ),
           wp.element.createElement(
             "td",
-            null,
             wp.element.createElement("h3", null, "phone")
           ),
           wp.element.createElement(
             "td",
-            null,
             wp.element.createElement("h3", null, "website")
           ),
           wp.element.createElement(
             "td",
-            null,
             wp.element.createElement("h3", null, "company")
           )
         )
