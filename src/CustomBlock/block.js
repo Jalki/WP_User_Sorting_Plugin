@@ -16,48 +16,61 @@ wp.blocks.registerBlockType('impsyde/impsyde-table', {
       }
   
       return wp.element.createElement(
-        "table",
-          wp.element.createElement(
-          "tr",
-          wp.element.createElement(
-            "td",
-              wp.element.createElement("h3", null, "id")
-          ),
-          wp.element.createElement(
-            "td",
-            wp.element.createElement("h3", null, "name")
-          ),
-          wp.element.createElement(
-            "td",
-            wp.element.createElement("h3", null, "username")
-          ),
-          wp.element.createElement(
-            "td",
-            wp.element.createElement("h3", null, "email")
-          ),
-          wp.element.createElement(
-            "td",
-            wp.element.createElement("h3", null, "address")
-          ),
-          wp.element.createElement(
-            "td",
-            wp.element.createElement("h3", null, "phone")
-          ),
-          wp.element.createElement(
-            "td",
-            wp.element.createElement("h3", null, "website")
-          ),
-          wp.element.createElement(
-            "td",
-            wp.element.createElement("h3", null, "company")
+        "div",
+        null,
+        wp.element.createElement(
+          "table",
+            wp.element.createElement(
+            "tr",
+            null,
+            wp.element.createElement(
+              "td",
+              null,
+                wp.element.createElement("h3", null, "id")
+            ),
+            wp.element.createElement(
+              "td",
+              null,
+              wp.element.createElement("h3", null, "name")
+            ),
+            wp.element.createElement(
+              "td",
+              null,
+              wp.element.createElement("h3", null, "username")
+            ),
+            wp.element.createElement(
+              "td",
+              null,
+              wp.element.createElement("h3", null, "email")
+            ),
+            wp.element.createElement(
+              "td",
+              null,
+              wp.element.createElement("h3", null, "address")
+            ),
+            wp.element.createElement(
+              "td",
+              null,
+              wp.element.createElement("h3", null, "phone")
+            ),
+            wp.element.createElement(
+              "td",
+              null,
+              wp.element.createElement("h3", null, "website")
+            ),
+            wp.element.createElement(
+              "td",
+              null,
+              wp.element.createElement("h3", null, "company")
+            )
           )
-        )
-      );
+        );
     },
-
     save: function(props) {
       function updateContent(event){
         props.setAttributes({content: event.target.value})
       }
+
+      return null
     }
   })
