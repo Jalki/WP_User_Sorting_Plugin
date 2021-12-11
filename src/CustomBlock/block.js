@@ -64,6 +64,7 @@ wp.blocks.registerBlockType('impsyde/impsyde-table', {
               wp.element.createElement("h3", null, "company")
             )
           )
+        )
         );
     },
     save: function(props) {
