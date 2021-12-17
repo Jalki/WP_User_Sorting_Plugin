@@ -7,13 +7,16 @@ wp.blocks.registerBlockType('impsyde/impsyde-table', {
       color: {type: 'string'}
     },
     edit: function(props) {
-      return <table>
-        <tr>
-          <th>
-            Tests
-          </th>
-        </tr>
-        </table>;
+      return wp.element.createElement(
+        "div",
+        null,
+        wp.element.createElement(
+          "h3",
+          null,
+          "Impsyde Code Test"
+        ),
+        wp.element.createElement("input", { type: "text", value: props.attributes.content, onChange: updateContent })
+      );
     },
     save: function(props) {
     return null;
