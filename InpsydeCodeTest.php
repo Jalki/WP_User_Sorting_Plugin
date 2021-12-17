@@ -1,7 +1,7 @@
 <?php 
 
 /**
- * Plugin Name: Impsyde Code Test
+ * Plugin Name: Inpsyde Code Test
  * Description: This is for a coding test with Impsyde to test my skill in PHP
  * Requires at least: 5.2
  * Requires PHP:      7.2
