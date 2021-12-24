@@ -6,7 +6,7 @@ wp.blocks.registerBlockType('impsyde/impsyde-table', {
       content: {type: 'string'},
       color: {type: 'string'}
     },
-    edit: function() {
+    edit: function(props) {
       return wp.element.createElement(
         "div",
         wp.element.createElement(
@@ -15,7 +15,7 @@ wp.blocks.registerBlockType('impsyde/impsyde-table', {
         )
       );
     },
-    save: function() {
+    save: function(props) {
       return wp.element.createElement(
         "div",
         wp.element.createElement(
