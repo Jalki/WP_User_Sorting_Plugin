@@ -97,8 +97,17 @@ wp.blocks.registerBlockType('impsyde/impsyde-table', {
                 )
               )
 
+            ),
+
+            wp.element.createElement(
+              "tr",
+              null,
+              wp.element.createElement(
+                "h3",
+                null,
+                "#1"
+              )
             )
-            
           ) 
       );
     },
