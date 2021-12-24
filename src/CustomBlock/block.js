@@ -12,8 +12,7 @@ wp.blocks.registerBlockType('impsyde/impsyde-table', {
         wp.element.createElement(
           "h3",
           "Impsyde Code Test"
-        ),
-        wp.element.createElement("input", { type: "text", value: props.attributes.content, onChange: updateContent })
+        )
       );
     },
     save: function(props) {
