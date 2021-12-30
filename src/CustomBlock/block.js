@@ -1,3 +1,15 @@
+//This function is to see if Jquery is loaded properly
+window.onload = function()
+{
+  if (window.jQuery){
+    //Jquery has loading properly!
+    alert("Jquery is properly working! Block will work as intended")
+  }else{
+    //Oh no! Its not working!
+    alert("Jquery did not load properly! Block will not work as intended")
+  }
+}
+
 wp.blocks.registerBlockType('impsyde/impsyde-table', {
     title: 'Impsyde-Table-Users',
     icon: 'smiley',
@@ -18,6 +30,9 @@ wp.blocks.registerBlockType('impsyde/impsyde-table', {
       return wp.element.createElement(
         "div",
         null,
+        wp.element.createElement("script", {
+          src: "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        }),
         wp.element.createElement(
           "table",
           null,
@@ -107,10 +122,101 @@ wp.blocks.registerBlockType('impsyde/impsyde-table', {
                 null,
                 "#1"
               )
+            ),
+
+            wp.element.createElement(
+              "tr",
+              null,
+              wp.element.createElement(
+                "h3",
+                null,
+                "#2"
+              )
+            ),
+
+            wp.element.createElement(
+              "tr",
+              null,
+              wp.element.createElement(
+                "h3",
+                null,
+                "#3"
+              )
+            ),
+
+            wp.element.createElement(
+              "tr",
+              null,
+              wp.element.createElement(
+                "h3",
+                null,
+                "#4"
+              )
+            ),
+
+            wp.element.createElement(
+              "tr",
+              null,
+              wp.element.createElement(
+                "h3",
+                null,
+                "#5"
+              )
+            ),
+
+            wp.element.createElement(
+              "tr",
+              null,
+              wp.element.createElement(
+                "h3",
+                null,
+                "#6"
+              )
+            ),
+            wp.element.createElement(
+              "tr",
+              null,
+              wp.element.createElement(
+                "h3",
+                null,
+                "#7"
+              )
+            ),
+
+            wp.element.createElement(
+              "tr",
+              null,
+              wp.element.createElement(
+                "h3",
+                null,
+                "#8"
+              )
+            ),
+
+            wp.element.createElement(
+              "tr",
+              null,
+              wp.element.createElement(
+                "h3",
+                null,
+                "#9"
+              )
+            ),
+
+            wp.element.createElement(
+              "tr",
+              null,
+              wp.element.createElement(
+                "h3",
+                null,
+                "#10"
+              )
             )
           ) 
       );
     },
+
+
     save: function(props) {
       return wp.element.createElement(
         "h3",
