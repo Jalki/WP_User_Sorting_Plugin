@@ -2,13 +2,41 @@
 window.onload = function()
 {
   if (window.jQuery){
-    //Jquery has loading properly!
+    //Jquery has loaded properly!
     alert("Jquery is properly working! Block will work as intended")
   }else{
     //Oh no! Its not working!
     alert("Jquery did not load properly! Block will not work as intended")
   }
 }
+
+$(function(){
+
+  var $users = $('.users_table')
+
+  $.ajax({
+    type: 'GET',
+    url: 'https://jsonplaceholder.typicode.com/users',
+    success: function(users) {
+      $.each(users, function(i, user){
+        $users.append(
+          wp.element.createElement(
+            "tr",
+            null,
+              wp.element.createElement(
+                "td",
+                null,
+                wp.element.createElement(
+                  "h3",
+                  null,
+                  '+ users.id +'
+                )
+              )
+            )
+        )
+      });
+    }
+});
 
 wp.blocks.registerBlockType('impsyde/impsyde-table', {
     title: 'Impsyde-Table-Users',
@@ -35,6 +63,7 @@ wp.blocks.registerBlockType('impsyde/impsyde-table', {
         }),
         wp.element.createElement(
           "table",
+          {class: "user_table"},
           null,
           wp.element.createElement(
             "tr",
@@ -45,7 +74,7 @@ wp.blocks.registerBlockType('impsyde/impsyde-table', {
                 wp.element.createElement(
                   "h3",
                   null,
-                  "ID"
+                  "Id"
                 )
               ),
               wp.element.createElement(

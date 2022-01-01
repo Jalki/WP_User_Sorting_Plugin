@@ -17,6 +17,6 @@
 
 require plugin_dir_path( __FILE__ ) . 'src\CustomBlock\block.php';
 
-require plugin_dir_path(__FILE__) . 'init.php';
+require plugin_dir_path(__FILE__) . 'src\PHP\init.php';
  
 ?>
