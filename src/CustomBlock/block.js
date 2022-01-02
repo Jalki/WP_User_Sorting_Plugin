@@ -10,31 +10,6 @@ window.onload = function()
   }
 }
 
-$(function(){
-
-  var $users = $('.users_table');
-
-  $.ajax({
-    type: 'GET',
-    url: 'https://jsonplaceholder.typicode.com/users',
-    success: function(users) {
-      $.each(users, function(i, user){
-        $users.append(
-          wp.element.createElement(
-            "tr",
-            null,
-            wp.element.createElement(
-              "h3",
-              null,
-              '+ users.id +'
-            )
-          )
-        );
-      });
-    }
-  });
-});
-
 wp.blocks.registerBlockType('impsyde/impsyde-table', {
     title: 'Impsyde-Table-Users',
     icon: 'smiley',
