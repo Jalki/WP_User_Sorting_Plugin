@@ -12,7 +12,7 @@ window.onload = function()
 
 $(function(){
 
-  var $users = $('.users_table')
+  var $users = $('.users_table');
 
   $.ajax({
     type: 'GET',
@@ -23,19 +23,16 @@ $(function(){
           wp.element.createElement(
             "tr",
             null,
-              wp.element.createElement(
-                "td",
-                null,
-                wp.element.createElement(
-                  "h3",
-                  null,
-                  '+ users.id +'
-                )
-              )
+            wp.element.createElement(
+              "h3",
+              null,
+              '+ users.id +'
             )
-        )
+          )
+        );
       });
     }
+  });
 });
 
 wp.blocks.registerBlockType('impsyde/impsyde-table', {
