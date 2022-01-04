@@ -65,17 +65,26 @@ if ( !class_exists( "Data" ) ){
     class Data
     {
         function __construct(){
-            add_action();
+            add_action('rest_api_init', array($this, 'register_user_list') );
         }
 
-        function GetData()
+        //This is our endpoint, which allows us to GET from the API
+        public function register_user_list() 
         {
-            
+            register_rest_route(
+                'src\JSON',
+                'https://jsonplaceholder.typicode.com/users',
+                [
+                    'method' => 'GET',
+                    'callback' => 'SetUsers'
+            ]);
         }
 
-        function SetData()
+        //Outputs to the block that has been created for our tester
+        function SetUsers($data)
         {
-            
+            $response = 'It gathered from the API!';
+            return rest_ensure_response($response);
         }
     }
 };

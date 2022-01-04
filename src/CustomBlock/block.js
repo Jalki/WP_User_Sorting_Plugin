@@ -12,11 +12,27 @@ window.onload = function()
 
 wp.blocks.registerBlockType('impsyde/impsyde-table', {
     title: 'Impsyde-Table-Users',
-    icon: 'smiley',
+    icon: 'dashicons-editor-table',
     category: 'common',
     attributes: {
-      content: {type: 'string'},
-      color: {type: 'string'}
+      content: {
+        type: 'array',
+        source: 'children',
+        selector: 'h3'
+      },
+      url:{
+        type: "string",
+        source: "attribute",
+        selector: "a",
+        attribute: "href"
+      },
+      data: {
+        type: 'string'
+      },
+      id: {
+        type: 'integer'
+      },
+      color: {type: 'string'},
     },
     edit: function(props) {
       function updateContent(event){
@@ -25,6 +41,10 @@ wp.blocks.registerBlockType('impsyde/impsyde-table', {
 
       function updateContent(value){
         props.setAttributes({color: value.hex})
+      }
+
+      function updateContent(value){
+        props.setAttributes({id: event.target.value})
       }
 
       return wp.element.createElement(
@@ -111,6 +131,15 @@ wp.blocks.registerBlockType('impsyde/impsyde-table', {
                   null,
                   "Company"
                 )
+              ),
+              wp.element.createElement(
+                "td",
+                null,
+                wp.element.createElement(
+                  "h3",
+                  null,
+                  "url"
+                )
               )
 
             ),
@@ -119,98 +148,27 @@ wp.blocks.registerBlockType('impsyde/impsyde-table', {
               "tr",
               null,
               wp.element.createElement(
-                "h3",
-                null,
-                "#1"
-              )
-            ),
-
-            wp.element.createElement(
-              "tr",
-              null,
-              wp.element.createElement(
-                "h3",
-                null,
-                "#2"
-              )
-            ),
-
-            wp.element.createElement(
-              "tr",
-              null,
-              wp.element.createElement(
-                "h3",
-                null,
-                "#3"
-              )
-            ),
-
-            wp.element.createElement(
-              "tr",
-              null,
-              wp.element.createElement(
-                "h3",
-                null,
-                "#4"
-              )
-            ),
-
-            wp.element.createElement(
-              "tr",
-              null,
-              wp.element.createElement(
-                "h3",
-                null,
-                "#5"
-              )
-            ),
-
-            wp.element.createElement(
-              "tr",
-              null,
-              wp.element.createElement(
-                "h3",
-                null,
-                "#6"
-              )
-            ),
-            wp.element.createElement(
-              "tr",
-              null,
-              wp.element.createElement(
-                "h3",
-                null,
-                "#7"
-              )
-            ),
-
-            wp.element.createElement(
-              "tr",
-              null,
-              wp.element.createElement(
-                "h3",
-                null,
-                "#8"
-              )
-            ),
-
-            wp.element.createElement(
-              "tr",
-              null,
-              wp.element.createElement(
-                "h3",
-                null,
-                "#9"
-              )
-            ),
-
-            wp.element.createElement(
-              "tr",
-              null,
-              wp.element.createElement(
-                "h3",
-                null,
-                "#10"
+                  "td",
+                  null,
+                  wp.element.createElement(
+                    "select",
+                    {
+                      name: "dropdown"
+                    },
+                    wp.element.createElement(
+                      "option",
+                      {
+                        value: 1,
+                        selected: true
+                      }
+                    ),
+                    wp.element.createElement(
+                      "option",
+                      {
+                        value: 2,
+                      }
+                    )
+                  )
               )
             )
           ) 
