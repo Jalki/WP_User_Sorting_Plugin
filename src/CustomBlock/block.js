@@ -10,16 +10,6 @@ window.onload = function()
   }
 }
 
-function parsedata()
-{
-  
-}
-
-function selectelements()
-{
-
-}
-
 wp.blocks.registerBlockType('impsyde/impsyde-table', {
     title: 'Impsyde-Table-Users',
     icon: 'dashicons-editor-table',
