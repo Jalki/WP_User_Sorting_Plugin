@@ -10,6 +10,16 @@ window.onload = function()
   }
 }
 
+function parsedata()
+{
+  
+}
+
+function selectelements()
+{
+
+}
+
 wp.blocks.registerBlockType('impsyde/impsyde-table', {
     title: 'Impsyde-Table-Users',
     icon: 'dashicons-editor-table',
@@ -152,6 +162,7 @@ wp.blocks.registerBlockType('impsyde/impsyde-table', {
                   null,
                   wp.element.createElement(
                     "select",
+                    {class: "selections"},
                     {
                       name: "dropdown"
                     },
@@ -160,13 +171,15 @@ wp.blocks.registerBlockType('impsyde/impsyde-table', {
                       {
                         value: 1,
                         selected: true
-                      }
+                      },
+                      "1"
                     ),
                     wp.element.createElement(
                       "option",
                       {
                         value: 2,
-                      }
+                      },
+                      "2"
                     )
                   )
               )

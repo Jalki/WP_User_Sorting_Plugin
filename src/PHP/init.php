@@ -64,35 +64,42 @@ if ( !class_exists( "CodeSettings" ) ){
 if ( !class_exists( "Data" ) ){
     class Data
     {
-        function __construct(){
-            add_action('rest_api_init', array($this, 'register_user_list') );
+        public $UserData;
+        public $UserJson;
+
+        function __construct($UserData){
+
+            $this->userdata = $UserData;
+
         }
 
         //This is our endpoint, which allows us to GET from the API
-        public function register_user_list() 
+        public function GetUsersdata() 
         {
-            register_rest_route(
-                'src\JSON',
-                'https://jsonplaceholder.typicode.com/users',
-                [
-                    'method' => 'GET',
-                    'callback' => 'SetUsers'
-            ]);
+            $response = wp_remote_get('https://api.github.com/users/wordpress');
+            try
+            {
+                $jsondata = json_decode( $response['body'] );
+
+                return $this->userdata;
+
+            }catch(Exception $ex)
+            {
+                $jsondata = null;
+            }
+
+            return $jsondata;
+            echo $jsondata;
         }
 
         //Outputs to the block that has been created for our tester
-        function SetUsers($data)
-        {
-            $response = 'It gathered from the API!';
-            return rest_ensure_response($response);
-        }
     }
 };
 
 /*Creates and init classes */
-/*$Data = new Data();*/
+$Data = new Data();
+echo $Data->GetUsersdata();
 $SettingsClass = new CodeSettings();
-/**$Customblock = new CustomBlock();*/
 ?>
 
 

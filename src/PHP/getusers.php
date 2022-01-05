@@ -1,11 +1,10 @@
 <?php
-    function error($msg)
-    {
-        $response = array("success" => false, "message" => $msg);
-    }
 
-    //Actually does stuff
-    $response = array();
+    function()
+    {
+        $response = wp_remote_get( 'https://api.github.com/users/wordpress' );
+        $body     = wp_remote_retrieve_body( $response );
+    }
     
 
 
