@@ -51,6 +51,53 @@ if ( !class_exists( "CodeSettings" ) ){
             </div>
             <hr>
             <div>
+                <h2>Data</h2>
+                <form method = "post" action = "<php? admin_url( 'admin_url' ); ?">
+                    <table>
+                            <tr>
+                                <th>
+                                    <h4>Id</h4>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <h4>Name</h4>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <h4>Username</h4>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <h4>Email</h4>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <h4>Address</h4>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <h4>Phone</h4>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <h4>Website</h4>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <h4>Company</h4>
+                                </th>
+                            </tr>
+                    </table>
+                </form>
+            </div>
+            <div>
                 <button>
                     <h2>Restore Default Settings</h2>
                 </button>
@@ -64,41 +111,32 @@ if ( !class_exists( "CodeSettings" ) ){
 if ( !class_exists( "Data" ) ){
     class Data
     {
-        public $UserData;
-        public $UserJson;
-
-        function __construct($UserData){
-
-            $this->userdata = $UserData;
-
+        function __construct(){
+            add_action( 'wp_ajax_get_breweries_from_api', array( $this, 'get_users_from_api'));
+            add_action( 'admin_post_nopriv_process_form', array( $this, 'process_data'));
+            add_action( 'admin_post_process_form', array($this, 'process_data'));
         }
 
-        //This is our endpoint, which allows us to GET from the API
-        public function GetUsersdata() 
-        {
-            $response = wp_remote_get('https://api.github.com/users/wordpress');
-            try
-            {
-                $jsondata = json_decode( $response['body'] );
+        function get_users_from_api(){
+            $User_Json = wp_remote_retrive_body( wp_remote_get('https://jsonplaceholder.typicode.com/users'));
+            $results = json_decode( $User_Json );
 
-                return $this->userdata;
-
-            }catch(Exception $ex)
-            {
-                $jsondata = null;
+            foreach($results as $key => $value){
+                echo $key . " | " . $value . "<br>";
             }
 
-            return $jsondata;
-            echo $jsondata;
+            return $results;
         }
 
         //Outputs to the block that has been created for our tester
+        function process_data(){
+            return null;
+        }
     }
 };
 
 /*Creates and init classes */
 $Data = new Data();
-echo $Data->GetUsersdata();
 $SettingsClass = new CodeSettings();
 ?>
 
