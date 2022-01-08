@@ -53,47 +53,10 @@ if ( !class_exists( "CodeSettings" ) ){
             <div>
                 <h2>Data</h2>
                 <form method = "post" action = "<php? admin_url( 'admin_url' ); ?">
-                    <table>
-                            <tr>
-                                <th>
-                                    <h4>Id</h4>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <h4>Name</h4>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <h4>Username</h4>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <h4>Email</h4>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <h4>Address</h4>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <h4>Phone</h4>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <h4>Website</h4>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <h4>Company</h4>
-                                </th>
-                            </tr>
+                    <table id = "datatable">
+                        <script >
+                            
+                        </script>
                     </table>
                 </form>
             </div>
@@ -113,7 +76,7 @@ if ( !class_exists( "Data" ) ){
     {
         public $User_Json;
         public $results;
-        
+
         function __construct(){
             add_action( 'wp_ajax_get_breweries_from_api', array( $this, 'get_users_from_api'));
             add_action( 'admin_post_nopriv_process_form', array( $this, 'process_data'));
@@ -139,7 +102,7 @@ if ( !class_exists( "Data" ) ){
 };
 
 /*Creates and init classes */
-$Data = new Data();
+/*$Data = new Data();*/
 $SettingsClass = new CodeSettings();
 ?>
 
