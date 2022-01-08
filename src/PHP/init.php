@@ -111,6 +111,9 @@ if ( !class_exists( "CodeSettings" ) ){
 if ( !class_exists( "Data" ) ){
     class Data
     {
+        public $User_Json;
+        public $results;
+        
         function __construct(){
             add_action( 'wp_ajax_get_breweries_from_api', array( $this, 'get_users_from_api'));
             add_action( 'admin_post_nopriv_process_form', array( $this, 'process_data'));
